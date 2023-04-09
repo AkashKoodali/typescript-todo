@@ -1,20 +1,27 @@
 import mongoose from "mongoose";
 
 export interface TodoDocument extends mongoose.Document {
-  title: string;
-  status: 'completed' | 'uncompleted';
+  name: string;
+  description: string;
+  status: boolean;
 }
 
 const todoSchema = new mongoose.Schema(
   {
-    title: {
+    name: {
       type: String,
-      required: true,
-    },
-    status: {
+      required: true
+  },
+
+  description: {
       type: String,
-      required: true,
-    },
+      required: true
+  },
+
+  status: {
+      type: Boolean,
+      required: true
+  }
   },
   { timestamps: true }
 );
