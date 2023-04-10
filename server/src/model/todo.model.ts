@@ -10,18 +10,19 @@ const todoSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: true
-  },
+      required: true,
+    },
 
-  description: {
+    description: {
       type: String,
-      required: true
-  },
+      required: true,
+    },
 
-  status: {
+    status: {
       type: Boolean,
-      required: true
-  }
+      default: false,
+      required: true,
+    },
   },
   { timestamps: true }
 );

@@ -8,6 +8,7 @@ import morgan from "morgan";
 import log from "./utils/logger";
 import connect from "./utils/connect";
 import routes from "./routes";
+import swaggerDocs from "./utils/swagger";
 
 const port = config.get<number>("port");
 const host = config.get<string>("host");
@@ -25,4 +26,6 @@ app.listen(port, host, async () => {
   await connect();
 
   routes(app);
+
+  swaggerDocs(app, port);
 });
